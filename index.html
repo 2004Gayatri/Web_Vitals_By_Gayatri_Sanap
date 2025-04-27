@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Core Web Vitals Analyzer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: #1e1e2f;
+      color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: #2c2c3e;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #00ffc8;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      font-size: 16px;
+      background: #3c3c50;
+      color: #fff;
+    }
+    button {
+      background: #00ffc8;
+      color: #1e1e2f;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    button:hover {
+      background: #00d6aa;
+    }
+    .results {
+      margin-top: 30px;
+    }
+    .metric {
+      background: #3c3c50;
+      margin: 15px 0;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 18px;
+      color: #fff;
+      box-shadow: 0 0 12px rgba(0, 255, 200, 0.1);
+      text-align: left;
+    }
+    .metric span {
+      font-weight: bold;
+      display: block;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+    .explanation {
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Core Web Vitals Analyzer</h1>
+    <input type="text" id="urlInput" placeholder="Enter a website URL (e.g., https://example.com)" />
+    <button onclick="runTest()">Analyze</button>
+
+    <div class="results" id="results">
+      <div class="metric" id="lcp">
+        <span>LCP: --</span>
+        <div class="explanation">🕒 <strong>Largest Contentful Paint:</strong> Measures loading speed. Good if &lt; 2.5s.</div>
+      </div>
+      <div class="metric" id="fid">
+        <span>FID: --</span>
+        <div class="explanation">⚡ <strong>First Input Delay:</strong> Measures responsiveness. Good if &lt; 100ms.</div>
+      </div>
+      <div class="metric" id="cls">
+        <span>CLS: --</span>
+        <div class="explanation">🎯 <strong>Cumulative Layout Shift:</strong> Measures visual stability. Good if &lt; 0.1.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
